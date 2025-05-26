@@ -4,6 +4,7 @@
 module.exports = {
  async up(queryInterface, Sequelize) {
     // 1. Hapus constraint foreign key dulu
+    await queryInterface.removeConstraint('orders', 'orders_ibfk_2');
 
     // 2. Baru hapus tabel admins
     await queryInterface.dropTable('admins');
